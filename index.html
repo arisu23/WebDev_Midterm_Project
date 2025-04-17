@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinese Zodiac Birth Animal</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="background"></div>
+    <h1>Uncover Your Chinese Zodiac Birth Animal</h1>
+    <div class="container">
+      <form>
+        <div class="input-container">
+          <div class="month">
+            <label for="month">Month:</label>
+            <input type="text" id="month" name="month" required size="9" />
+          </div>
+
+          <div class="day">
+            <label for="day">Day:</label>
+            <input
+              type="number"
+              id="day"
+              name="day"
+              min="1"
+              max="31"
+              required
+              maxlength="2"
+              oninput="this.value=this.value.slice(0,this.maxLength)"
+            />
+          </div>
+
+          <div class="year">
+            <label for="year">Year:</label>
+            <input
+              type="number"
+              id="year"
+              name="year"
+              required
+              min="1900"
+              max="2100"
+              maxlength="4"
+              oninput="this.value=this.value.slice(0,this.maxLength)"
+            />
+          </div>
+        </div>
+        <input type="button" value="Reveal" id="btn" onClick="handleClick()" />
+      </form>
+    </div>
+
+    <div class="container2">
+      <div class="result-container">
+        <div class="img-container">
+          <img src="/img/Ox.webp" alt="Zodiac Animal" />
+        </div>
+
+        <div class="result-text">
+          <h2 class="result-title">
+            Year of the <span class="title">Snake</span>
+          </h2>
+        </div>
+
+        <div class="description-container">
+          <p class="description">
+            Snake is the 6th animal in the 12-year cycle of the Chinese zodiac,
+            coming after the Dragon and before the Horse. Recent years of the
+            Snake include 2013, 2001, 1989, 1977, 1965, and 1953, with the next
+            Snake year in 2037 (Year of the Fire Snake). The Year of the Snake
+            corresponds with the earthly branch symbol sǐ.
+          </p>
+        </div>
+
+        <div class="personality-container">
+          <h3><span class="title">Snake</span> Personality</h3>
+          <p class="personality">
+            People born in the Year of the Snake are known for their wisdom,
+            intuition, and elegance. They are deep thinkers who value privacy
+            and introspection. However, they can also be seen as secretive and
+            aloof.
+          </p>
+        </div>
+
+        <div class="traits-container">
+          <h3>Traits</h3>
+          <ul id="traits">
+            <li>Mysterious</li>
+            <li>Intuitive</li>
+            <li>Graceful</li>
+            <li>Intelligent</li>
+            <li>Private</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
