@@ -86,10 +86,30 @@ const zodiacTraits = {
   Pig: ["Generous", "Diligent", "Compassionate", "Easygoing", "Patient"],
 };
 
+function isLeapYear(year) {
+  year = parseInt(year);
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
 function handleClick() {
   let yearValue = year.value;
   let monthValue = month.value;
   let dayValue = day.value;
+
+  const monthDays = {
+    January: 31,
+    February: isLeapYear(yearValue) ? 29 : 28,
+    March: 31,
+    April: 30,
+    May: 31,
+    June: 30,
+    July: 31,
+    August: 31,
+    September: 30,
+    October: 31,
+    November: 30,
+    December: 31,
+  };
 
   if (monthValue === "" || dayValue === "" || yearValue === "") {
     alert("Please fill in empty fields.");
@@ -108,6 +128,11 @@ function handleClick() {
 
   if (yearValue.length < 4) {
     alert("Please enter a valid year.");
+    return;
+  }
+
+  if (dayValue < 1 || dayValue > monthDays[monthValue]) {
+    alert(`Please enter a valid day for ${monthValue}.`);
     return;
   }
 
